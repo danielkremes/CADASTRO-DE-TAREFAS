@@ -1,39 +1,39 @@
 package api_tasks.services;
 
 import api_tasks.entity.Tasks;
-import api_tasks.repository.TodosRepository;
+import api_tasks.repository.TasksRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class TodosService {
+public class TasksService {
 
-    private final TodosRepository todosRepository;
+    private final TasksRepository tasksRepository;
 
-    public TodosService(TodosRepository todosRepository) {
-        this.todosRepository = todosRepository;
+    public TasksService(TasksRepository tasksRepository) {
+        this.tasksRepository = tasksRepository;
     }
 
     // Criar um novo Todo
     public Tasks create(Tasks tasks) {
         System.out.println("Salvando no banco: " + tasks);
-        return todosRepository.save(tasks); // Salva o objeto no banco de dados
+        return tasksRepository.save(tasks); // Salva o objeto no banco de dados
     }
 
     // Listar todos os Tasks
     public List<Tasks> list() {
-        return todosRepository.findAll();
+        return tasksRepository.findAll();
     }
 
     // Atualizar um Todo
     public Tasks update(Tasks tasks) {
-        return todosRepository.save(tasks); // Atualiza se o ID existir
+        return tasksRepository.save(tasks); // Atualiza se o ID existir
     }
 
     // Deletar um Todo
     public List<Tasks> delete(long id) {
-        todosRepository.deleteById(id); // Deleta o objeto pelo ID
+        tasksRepository.deleteById(id); // Deleta o objeto pelo ID
         return list(); // Retorna a lista atualizada
     }
 }

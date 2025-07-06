@@ -1,7 +1,7 @@
 package api_tasks.controller;
 
 import api_tasks.entity.Tasks;
-import api_tasks.services.TodosService;
+import api_tasks.services.TasksService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,10 +11,10 @@ import java.util.List;
 @RequestMapping("todos")
 public class TodosController {
 
-    private final TodosService todosService;
+    private final TasksService tasksService;
 
-    public TodosController(TodosService todosService) {
-        this.todosService = todosService;
+    public TodosController(TasksService tasksService) {
+        this.tasksService = tasksService;
     }
 
     @PostMapping
@@ -24,22 +24,22 @@ public class TodosController {
         System.out.println("Descrição: " + tasks.getDescription());
         System.out.println("Realizado: " + tasks.isRealized());
         System.out.println("Prioridade: " + tasks.getPriority());
-        return todosService.create(tasks);
+        return tasksService.create(tasks);
     }
 
 
     @GetMapping
     public List<Tasks> list() {
-        return todosService.list();
+        return tasksService.list();
     }
 
     @PutMapping
     public Tasks update(@RequestBody Tasks tasks) {
-        return todosService.update(tasks);
+        return tasksService.update(tasks);
     }
 
     @DeleteMapping("{id}")
     public List<Tasks> delete(@PathVariable("id")  long id) {
-        return todosService.delete(id);
+        return tasksService.delete(id);
     }
 }
