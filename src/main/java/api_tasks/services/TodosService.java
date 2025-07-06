@@ -1,6 +1,6 @@
 package api_tasks.services;
 
-import api_tasks.entity.Todos;
+import api_tasks.entity.Tasks;
 import api_tasks.repository.TodosRepository;
 import org.springframework.stereotype.Service;
 
@@ -16,23 +16,23 @@ public class TodosService {
     }
 
     // Criar um novo Todo
-    public Todos create(Todos todos) {
-        System.out.println("Salvando no banco: " + todos);
-        return todosRepository.save(todos); // Salva o objeto no banco de dados
+    public Tasks create(Tasks tasks) {
+        System.out.println("Salvando no banco: " + tasks);
+        return todosRepository.save(tasks); // Salva o objeto no banco de dados
     }
 
-    // Listar todos os Todos
-    public List<Todos> list() {
+    // Listar todos os Tasks
+    public List<Tasks> list() {
         return todosRepository.findAll();
     }
 
     // Atualizar um Todo
-    public Todos update(Todos todos) {
-        return todosRepository.save(todos); // Atualiza se o ID existir
+    public Tasks update(Tasks tasks) {
+        return todosRepository.save(tasks); // Atualiza se o ID existir
     }
 
     // Deletar um Todo
-    public List<Todos> delete(long id) {
+    public List<Tasks> delete(long id) {
         todosRepository.deleteById(id); // Deleta o objeto pelo ID
         return list(); // Retorna a lista atualizada
     }

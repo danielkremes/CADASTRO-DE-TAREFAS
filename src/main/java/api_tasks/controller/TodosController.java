@@ -1,6 +1,6 @@
 package api_tasks.controller;
 
-import api_tasks.entity.Todos;
+import api_tasks.entity.Tasks;
 import api_tasks.services.TodosService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
@@ -18,28 +18,28 @@ public class TodosController {
     }
 
     @PostMapping
-    public Todos create(@Valid @RequestBody Todos todos) {
-        System.out.println("Recebido: " + todos);
-        System.out.println("Nome: " + todos.getName());
-        System.out.println("Descrição: " + todos.getDescription());
-        System.out.println("Realizado: " + todos.isRealized());
-        System.out.println("Prioridade: " + todos.getPriority());
-        return todosService.create(todos);
+    public Tasks create(@Valid @RequestBody Tasks tasks) {
+        System.out.println("Recebido: " + tasks);
+        System.out.println("Nome: " + tasks.getName());
+        System.out.println("Descrição: " + tasks.getDescription());
+        System.out.println("Realizado: " + tasks.isRealized());
+        System.out.println("Prioridade: " + tasks.getPriority());
+        return todosService.create(tasks);
     }
 
 
     @GetMapping
-    public List<Todos> list() {
+    public List<Tasks> list() {
         return todosService.list();
     }
 
     @PutMapping
-    public Todos update(@RequestBody Todos todos) {
-        return todosService.update(todos);
+    public Tasks update(@RequestBody Tasks tasks) {
+        return todosService.update(tasks);
     }
 
     @DeleteMapping("{id}")
-    public List<Todos> delete(@PathVariable("id")  long id) {
+    public List<Tasks> delete(@PathVariable("id")  long id) {
         return todosService.delete(id);
     }
 }

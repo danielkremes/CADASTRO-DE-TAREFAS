@@ -1,6 +1,6 @@
 package api_tasks.api_tasks;
 
-import api_tasks.entity.Todos;
+import api_tasks.entity.Tasks;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,19 +18,19 @@ class ApiTasksApplicationTests {
     }
     @Test
     void createTodoSuccess() {
-        Todos todos = new Todos("daniel", "desc 1", true, "p3");
+        Tasks tasks = new Tasks("daniel", "desc 1", true, "p3");
 
         webTestClient
                 .post()
-                .uri("todos")
-                .bodyValue(todos)
+                .uri("tasks")
+                .bodyValue(tasks)
                 .exchange()
                 .expectStatus().isOk()
                 .expectBody()
-                .jsonPath("$.name").isEqualTo(todos.getName())
-                .jsonPath("$.description").isEqualTo(todos.getDescription())
-                .jsonPath("$.realized").isEqualTo(todos.isRealized())
-                .jsonPath("$.priority").isEqualTo(todos.getPriority());
+                .jsonPath("$.name").isEqualTo(tasks.getName())
+                .jsonPath("$.description").isEqualTo(tasks.getDescription())
+                .jsonPath("$.realized").isEqualTo(tasks.isRealized())
+                .jsonPath("$.priority").isEqualTo(tasks.getPriority());
 
     }
 
@@ -38,7 +38,7 @@ class ApiTasksApplicationTests {
         webTestClient
                 .post()
                 .uri("/todos")
-                .bodyValue(new Todos("", "", false, ""))
+                .bodyValue(new Tasks("", "", false, ""))
                 .exchange()
                 .expectStatus().isBadRequest();
     }

@@ -7,14 +7,13 @@ import lombok.*;
 
 @Getter
 @Setter
-@Data
 @Builder
 @AllArgsConstructor
 @RequiredArgsConstructor
 @ToString
 @Entity
 @Table(name = "todos")
-public class Todos {
+public class Tasks {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -28,7 +27,7 @@ public class Todos {
     @NotBlank
     private String priority;
 
-    public Todos(String name, String description, boolean realized, String priority) {
+    public Tasks(String name, String description, boolean realized, String priority) {
         this.name = name;
         this.description = description;
         this.realized = realized;
