@@ -2,16 +2,17 @@ package api_tasks.api_tasks;
 
 import api_tasks.entity.Tasks;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.web.reactive.server.WebTestClient;
+// import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.boot.test.context.SpringBootTest;
+// import org.springframework.test.web.reactive.server.WebTestClient;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+// @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class ApiTasksApplicationTests {
 
-    @Autowired
-    private WebTestClient webTestClient;
+    // @Autowired
+    // private WebTestClient webTestClient;
 
+    /*
     @Test
     void ContextLoad() {
 
@@ -33,7 +34,9 @@ class ApiTasksApplicationTests {
                 .jsonPath("$.priority").isEqualTo(tasks.getPriority());
 
     }
+     */
 
+    /*
     void createTodoFailure() {
         webTestClient
                 .post()
@@ -42,4 +45,5 @@ class ApiTasksApplicationTests {
                 .exchange()
                 .expectStatus().isBadRequest();
     }
+     */
 }

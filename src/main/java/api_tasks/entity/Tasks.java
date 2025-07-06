@@ -12,7 +12,7 @@ import lombok.*;
 @RequiredArgsConstructor
 @ToString
 @Entity
-@Table(name = "todos")
+@Table(name = "tb_tasks")
 public class Tasks {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

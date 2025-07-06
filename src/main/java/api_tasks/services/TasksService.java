@@ -17,7 +17,6 @@ public class TasksService {
 
     // Create new task
     public Tasks createTask(Tasks tasks) {
-        System.out.println("Salvando no banco: " + tasks);
         return tasksRepository.save(tasks);
     }
 

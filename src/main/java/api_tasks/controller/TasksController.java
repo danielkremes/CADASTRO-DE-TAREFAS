@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("todos")
+@RequestMapping("/v1/api_tasks/")
 public class TasksController {
 
     private final TasksService tasksService;
@@ -22,7 +22,6 @@ public class TasksController {
         return tasksService.createTask(tasks);
     }
 
-
     @GetMapping
     public List<Tasks> list() {
         return tasksService.listTasks();
@@ -34,7 +33,7 @@ public class TasksController {
     }
 
     @DeleteMapping("{id}")
-    public List<Tasks> delete(@PathVariable("id")  long id) {
+    public List<Tasks> delete(@PathVariable("id") long id) {
         return tasksService.deleteTaskById(id);
     }
 }
