@@ -15,25 +15,24 @@ public class TasksService {
         this.tasksRepository = tasksRepository;
     }
 
-    // Criar um novo Todo
-    public Tasks create(Tasks tasks) {
+    // Create new task
+    public Tasks createTask(Tasks tasks) {
         System.out.println("Salvando no banco: " + tasks);
-        return tasksRepository.save(tasks); // Salva o objeto no banco de dados
+        return tasksRepository.save(tasks);
     }
 
-    // Listar todos os Tasks
-    public List<Tasks> list() {
+    // List all tasks
+    public List<Tasks> listTasks() {
         return tasksRepository.findAll();
     }
 
-    // Atualizar um Todo
-    public Tasks update(Tasks tasks) {
-        return tasksRepository.save(tasks); // Atualiza se o ID existir
+    // Update task
+    public Tasks updateTask(Tasks tasks) {
+        return tasksRepository.save(tasks);
     }
-
-    // Deletar um Todo
-    public List<Tasks> delete(long id) {
-        tasksRepository.deleteById(id); // Deleta o objeto pelo ID
-        return list(); // Retorna a lista atualizada
+    // Deleted task
+    public List<Tasks> deleteTaskById(long id) {
+        tasksRepository.deleteById(id);
+        return listTasks();
     }
 }

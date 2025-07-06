@@ -24,22 +24,22 @@ public class TasksController {
         System.out.println("Descrição: " + tasks.getDescription());
         System.out.println("Realizado: " + tasks.isRealized());
         System.out.println("Prioridade: " + tasks.getPriority());
-        return tasksService.create(tasks);
+        return tasksService.createTask(tasks);
     }
 
 
     @GetMapping
     public List<Tasks> list() {
-        return tasksService.list();
+        return tasksService.listTasks();
     }
 
     @PutMapping
     public Tasks update(@RequestBody Tasks tasks) {
-        return tasksService.update(tasks);
+        return tasksService.updateTask(tasks);
     }
 
     @DeleteMapping("{id}")
     public List<Tasks> delete(@PathVariable("id")  long id) {
-        return tasksService.delete(id);
+        return tasksService.deleteTaskById(id);
     }
 }
