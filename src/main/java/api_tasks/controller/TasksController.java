@@ -19,11 +19,6 @@ public class TasksController {
 
     @PostMapping
     public Tasks create(@Valid @RequestBody Tasks tasks) {
-        System.out.println("Recebido: " + tasks);
-        System.out.println("Nome: " + tasks.getName());
-        System.out.println("Descrição: " + tasks.getDescription());
-        System.out.println("Realizado: " + tasks.isRealized());
-        System.out.println("Prioridade: " + tasks.getPriority());
         return tasksService.createTask(tasks);
     }
 
