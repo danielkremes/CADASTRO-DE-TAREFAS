@@ -9,11 +9,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("todos")
-public class TodosController {
+public class TasksController {
 
     private final TasksService tasksService;
 
-    public TodosController(TasksService tasksService) {
+    public TasksController(TasksService tasksService) {
         this.tasksService = tasksService;
     }
 

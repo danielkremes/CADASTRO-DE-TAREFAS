@@ -16,15 +16,23 @@ import lombok.*;
 public class Tasks {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "task_id")
     private Long id;
 
     @NotBlank
+    @Column(name = "task_name")
     private String name;
+
     @NotBlank
+    @Column(name = "task_description")
     private String description;
+
     @NotNull
+    @Column(name = "task_realized")
     private boolean realized;
+
     @NotBlank
+    @Column(name = "task_priority")
     private String priority;
 
     public Tasks(String name, String description, boolean realized, String priority) {
