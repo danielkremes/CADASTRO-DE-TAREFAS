@@ -20,7 +20,7 @@ public class Tasks {
     private Long id;
 
     @NotBlank
-    @Column(name = "task_name")
+    @Column(name = "task_name", length = 150)
     private String name;
 
     @NotBlank
@@ -32,7 +32,7 @@ public class Tasks {
     private boolean realized;
 
     @NotBlank
-    @Column(name = "task_priority")
+    @Column(name = "task_priority", length = 7)
     private String priority;
 
     public Tasks(String name, String description, boolean realized, String priority) {
