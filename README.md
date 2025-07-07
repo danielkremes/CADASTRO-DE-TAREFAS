@@ -1,10 +1,26 @@
 # API de cadastro de tarefas
 
-API para gerenciar tarefas (CRUD) que faz parte [desse desafio](https://github.com/simplify-liferay/desafio-junior-backend-simplify) para pessoas desenvolvedoras backend júnior, que se candidatam para a Simplify.
+# Desafio sistema de gerenciamento de tarefas (To-Do List)
 
 Projeto em ação versão atualizada com docker compose [nesse video](https://youtu.be/h1xlF-xYn68) 
 
 Projeto em ação [nesse vídeo](https://youtu.be/jQhEwjofTnU).
+
+## Descrição
+- Desenvolva uma aplicação web utilizando uma linguagem de programação e um framework de sua escolha. A aplicação deve consistir em um sistema de gerenciamento de tarefas, 
+onde os usuários podem
+- criar
+- visualizar
+- editar
+- excluir tarefas
+
+## Requisitos
+- Usar banco de dados
+- Campos mínimos da entidade de tarefa
+    - Nome
+    - Descrição
+    - Realizado
+    - Prioridade
 
 ## Tecnologias
  
@@ -22,21 +38,6 @@ Projeto em ação [nesse vídeo](https://youtu.be/jQhEwjofTnU).
 - Injeção de Dependências
 - Variáveis de ambiente para garantir segurança de credencias do banco de dados
 - Geração automática do Swagger com a OpenAPI 3
-
-## Como Executar
-
-- Clonar repositório git
-- Construir o projeto:
-```
-$ ./mvnw clean package
-```
-- Executar a aplicação:
-```
-$ java -jar target/todolist-0.0.1-SNAPSHOT.jar
-```
-
-A API poderá ser acessada em [localhost:8080](http://localhost:8080/v1/api_tasks/).
-O Swagger poderá ser visualizado em [localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
 
 ## API Endpoints
 
